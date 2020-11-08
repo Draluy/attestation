@@ -1,0 +1,5 @@
+package fr.raluy.attestation
+
+enum class Motif {
+    ACHATS, TRAVAIL, SANTE, MOTIF_FAMILIAL, BALADE, CONVOCATION, CHERCHER_ENFANTS, HANDICAP
+}

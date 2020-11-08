@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="fr">
+    <title>Attestion Covid 2020</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <style>
+        #container {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+<h1>Attestation covid 2020</h1>
+<h2>Comment utiliser le site:</h2>
+
+<h3>1. Creer une url avec les params suivants: <em>ils sont tous obligatoires</em></h3>
+
+<ul>
+    <li>prenom: String
+    <li> nom: String
+    <li> dateNaissance: String, 10 chars en tout obligatoirement
+    <li> lieuNaissance: String
+    <li> adresse: String,
+    <li> ville: String,
+    <li> codePostal: Int, uniquement 5 chiffres, fuck la corse
+    <li> minutesDepart: Int, le nombre de minutes dans le passe ou a ete remplie l'attestation. Par ex, 15 fera que
+        l'attestation aura une date de remplissage de l'heure courante - 15 minutes.
+    <li> motifs: String, une concatenation separee par des virgules des motifs possibles: ACHATS, TRAVAIL, SANTE,
+        MOTIF_FAMILIAL, BALADE, CONVOCATION, CHERCHER_ENFANTS, HANDICAP
+</ul>
+<br/>
+Exemple:
+https://attestationcov.herokuapp.com?prenom=Elric&nom=Melnibone&dateNaissance=01/01/1922&lieuNaissance=dans les
+etoiles&adresse=34 rue des jonquilles&ville=Paris&codePostal=12345&minutesDepart=12&motifs=TRAVAIL,ENFANTS
+
+<h3>2. Mettre cette url en bookmark sur un navigateur, ou ajouter un raccourci depuis le dashboard de votre mobile</h3>
+
+<p>L'idee est de creer un bookmark par motif, maniere de pas remplir l'attestation a chaque fois</p>
+<p>Bref, vous vous debrouillez hein. Ca devrait telecharger l'attestation.</p>
+
+<a href="#" onclick="javascript:(function(){document.getElementById('container').style.visibility='visible';return false;})()">Voir le formulaire, genre si ca marche pas</a>
+<div id="container"></div>
+
+
+</body>
+</html>
