@@ -16,15 +16,15 @@ class MainController(val templateEngine: SpringTemplateEngine) {
     @GetMapping("/")
     @ResponseBody
     fun mirrorRest(
-            @RequestParam prenom: String,
-            @RequestParam nom: String,
-            @RequestParam dateNaissance: String,
-            @RequestParam lieuNaissance: String,
-            @RequestParam adresse: String,
-            @RequestParam ville: String,
-            @RequestParam codePostal: String,
-            @RequestParam minutesDepart: Int,
-            @RequestParam motifs: String
+            @RequestParam prenom: String?,
+            @RequestParam nom: String?,
+            @RequestParam dateNaissance: String?,
+            @RequestParam lieuNaissance: String?,
+            @RequestParam adresse: String?,
+            @RequestParam ville: String?,
+            @RequestParam codePostal: String?,
+            @RequestParam minutesDepart: Int?,
+            @RequestParam motifs: String?
     )
             : String {
         val context = createContext(prenom, nom, dateNaissance, lieuNaissance, adresse, ville, codePostal, minutesDepart, motifs)
@@ -42,7 +42,7 @@ class MainController(val templateEngine: SpringTemplateEngine) {
         return elt.toString()
     }
 
-    private fun createContext(prenom: String, nom: String, dateNaissance: String, lieuNaissance: String, adresse: String, ville: String, codePostal: String, minutesDepart: Int, motifs: String): Context {
+    private fun createContext(prenom: String?, nom: String?, dateNaissance: String?, lieuNaissance: String?, adresse: String?, ville: String?, codePostal: String?, minutesDepart: Int?, motifs: String?): Context {
         val context = Context()
         context.setVariable("prenom", prenom)
         context.setVariable("nom", nom)
