@@ -32,7 +32,7 @@ class MainController(val templateEngine: SpringTemplateEngine) {
 
         val doc = Jsoup.connect("https://media.interieur.gouv.fr/deplacement-covid-19/").get()
 
-        val indexPage = templateEngine.process("/index.html", Context())
+        val indexPage = templateEngine.process("index.html", Context())
         var elt = Jsoup.parse(indexPage)
         elt.body().getElementById("container").append(doc.body().html())
         elt.body().getElementById("container").appendElement("script")
